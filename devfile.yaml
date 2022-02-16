@@ -41,34 +41,28 @@ commands:
     exec:
       component: tools
       workingDir: ${PROJECTS_ROOT}/vertx-http-example
-      commandLine: >-
-          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTestsclean
-          install
+      commandLine: mvn -DskipTests clean install
       group:
         kind: build
   - id: run
     exec:
       component: tools
       workingDir: ${PROJECTS_ROOT}/vertx-http-example
-      commandLine:  >-
-          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME}
-          -Dvertx.disableDnsResolver=true vertx:run
+      commandLine: mvn -Dvertx.disableDnsResolver=true vertx:run
       group:
         kind: run
   - id: run-in-debug-mode
     exec:
       component: tools
       workingDir: ${PROJECTS_ROOT}/vertx-http-example
-      commandLine: >-
-          MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests
-          vertx:debug
+      commandLine: mvn -DskipTests vertx:debug
       group:
         kind: debug
   - id: run-tests
     exec:
       component: tools
       workingDir: ${PROJECTS_ROOT}/vertx-http-example
-      commandLine: 'MAVEN_OPTS="-Xmx200m" && mvn -Duser.home=${HOME} -DskipTests verify '
+      commandLine: mvn -DskipTests verify
       group:
         kind: debug
   - id: log-into-deployment-cluster
