@@ -19,8 +19,8 @@
 
     <fabric8.generator.from>registry.access.redhat.com/ubi8/openjdk-11</fabric8.generator.from>
 
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
   </properties>
